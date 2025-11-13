@@ -26,6 +26,8 @@ package
       
       public static const FULL_MOD_NAME:String = MOD_NAME + " " + MOD_VERSION;
       
+      private static const DEBUG:Boolean = false;
+      
       private static const TITLE_HUDMENU:String = "HUDMenu";
       
       private var topLevel:* = null;
@@ -91,11 +93,11 @@ package
          if(this.topLevel && this.topLevel.CenterGroup_mc && this.topLevel.CenterGroup_mc.QuickContainerWidget_mc)
          {
             this.QuickContainerWidget_mc = this.topLevel.CenterGroup_mc.QuickContainerWidget_mc;
-            setTimeout(ShowHUDMessage,10000,"Init: QuickContainerWidget found!");
+            setTimeout(ShowHUDMessage,30000,"Init OK!");
          }
          else
          {
-            setTimeout(ShowHUDMessage,10000,"Error initializing: QuickContainerWidget not found!");
+            setTimeout(ShowHUDMessage,30000,"Error initializing: QuickContainerWidget not found!");
          }
       }
       
@@ -132,7 +134,10 @@ package
             {
                this.QuickContainerWidget_mc.YButton.ButtonEnabled = true;
             }
-            ShowHUDMessage("buttons set");
+            if(DEBUG)
+            {
+               ShowHUDMessage("buttons set");
+            }
          }
          catch(e:*)
          {
@@ -150,7 +155,10 @@ package
                param1.data.buttons[i].enabled = true;
                i++;
             }
-            ShowHUDMessage("FrobberDataUpdate");
+            if(DEBUG)
+            {
+               ShowHUDMessage("FrobberDataUpdate");
+            }
          }
          catch(e:*)
          {
