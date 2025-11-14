@@ -22,7 +22,7 @@ package
       
       public static const MOD_NAME:String = "AreaLootButtonFix";
       
-      public static const MOD_VERSION:String = "1.0.0";
+      public static const MOD_VERSION:String = "1.0.1";
       
       public static const FULL_MOD_NAME:String = MOD_NAME + " " + MOD_VERSION;
       
@@ -129,10 +129,6 @@ package
             if(this.QuickContainerWidget_mc.XButton.ButtonVisible)
             {
                this.QuickContainerWidget_mc.XButton.ButtonEnabled = true;
-            }
-            if(this.QuickContainerWidget_mc.YButton.ButtonVisible)
-            {
-               this.QuickContainerWidget_mc.YButton.ButtonEnabled = true;
             }
             if(DEBUG)
             {
